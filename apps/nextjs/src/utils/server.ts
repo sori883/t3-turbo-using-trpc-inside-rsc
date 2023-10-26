@@ -1,10 +1,11 @@
 import { headers } from "next/headers";
-import type { AppRouter } from "@acme/api";
 import {
   createTRPCProxyClient,
   loggerLink,
   unstable_httpBatchStreamLink,
 } from "@trpc/client";
+
+import type { AppRouter } from "@acme/api";
 
 import { getUrl, transformer } from "./shared";
 

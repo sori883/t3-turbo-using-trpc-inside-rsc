@@ -13,7 +13,7 @@ export const postRouter = createTRPCRouter({
       };
     }),
 
-    publicProcedure: publicProcedure
+  publicProcedure: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
