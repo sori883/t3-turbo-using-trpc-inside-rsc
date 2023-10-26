@@ -7,7 +7,9 @@ import {
   PostList,
 } from "./_components/posts";
 
-export const runtime = "edge";
+// @issue
+// https://github.com/t3-oss/create-t3-turbo/issues/660
+// export const runtime = "edge";
 
 export default function HomePage() {
   return (
