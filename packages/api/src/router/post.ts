@@ -5,6 +5,22 @@ import { desc, eq, schema } from "@acme/db";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
+  protectedPing: publicProcedure
+    .input(z.object({ text: z.string() }))
+    .query(({ ctx, input }) => {
+      return {
+        greeting: `Hello ${ctx.session?.user.id} san, this is protected ping -> ${input.text}`,
+      };
+    }),
+
+    publicProcedure: publicProcedure
+    .input(z.object({ text: z.string() }))
+    .query(({ input }) => {
+      return {
+        greeting: `Hello this is public ping -> ${input.text}`,
+      };
+    }),
+
   all: publicProcedure.query(({ ctx }) => {
     // return ctx.db.select().from(schema.post).orderBy(desc(schema.post.id));
     return ctx.db.query.post.findMany({ orderBy: desc(schema.post.id) });
