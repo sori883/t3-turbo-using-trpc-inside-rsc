@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
     "push": "drizzle-kit push:mysql",
+    "dev": "drizzle-kit studio --host 127.0.0.1 --port 3100 --verbose",
     "studio": "drizzle-kit studio",
     "typecheck": "tsc --noEmit"
   },
@@ -24,6 +25,7 @@
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.19.13",
     "eslint": "^8.51.0",
+    "mysql2": "^3.6.2",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
