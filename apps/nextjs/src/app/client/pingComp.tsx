@@ -3,7 +3,7 @@
 import { api } from "~/utils/react";
 
 export default function PingComp() {
-  const hello = api.post.publicProcedure.useSuspenseQuery({
+  const hello = api.post.publicPing.useSuspenseQuery({
     text: "from client",
   });
   if (!hello) {
@@ -14,5 +14,5 @@ export default function PingComp() {
     );
   }
 
-  return <p>{hello[0].greeting}</p>;
+  return <p>{hello[0].greeting}</p>
 }

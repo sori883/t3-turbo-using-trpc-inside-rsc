@@ -5,7 +5,7 @@ import { desc, eq, schema } from "@acme/db";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
-  protectedPing: publicProcedure
+  protectedPing: protectedProcedure
     .input(z.object({ text: z.string() }))
     .query(({ ctx, input }) => {
       return {
@@ -13,7 +13,7 @@ export const postRouter = createTRPCRouter({
       };
     }),
 
-  publicProcedure: publicProcedure
+  publicPing: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
       return {
