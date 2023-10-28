@@ -12,4 +12,5 @@ create-t3-appに実装済みらしいので、そのまま使わせて頂いた�
 情報の元ネタはこちら
 https://github.com/t3-oss/create-t3-turbo/issues/596
 
-
+# Expo
+Expoを使ったことがないので未着手
